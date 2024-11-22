@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-blue: #0c2e8a;
+    --lighr-green: #50d8af;
+    --brown: #555;
+    --Montserrat: "Montserrat", serif;
+    --Raleway: "Raleway", sans-serif;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+/* NAVBAT START */
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 42px !important;
+    font-family: var(--Montserrat);
+    color: var(--dark-blue) !important;
+}
+
+.navbar-brand span {
+    color: var(--lighr-green);
+}
+
+.navbar-nav {
+    width: 650px !important;
+    font-family: var(--Raleway);
+    font-size: 14px;
+    font-weight: 700;
+    /* line-height: 21px; */
+}
+
+.home {
+    color: var(--lighr-green) !important;
+}
+
+.nav-col {
+    color: var(--brown) !important;
+    transition: all 5s;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--lighr-green) !important;
+    }
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+/* NAVBAR END */
+
+/* HERO SECTION START */
+.hero_section {
+    width: 100%;
+    height: 450px;
+    background-image: url(../imges/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: var(--Montserrat);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content h2 {
+    color: var(--dark-blue);
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.content span {
+    color: var(--lighr-green);
+    text-decoration: underline;
+}
+
+.happen {
+    text-align: center;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cont button {
+    width: 160px;
+    height: 45px;
+    background-color: var(--dark-blue);
+    font-family: var(--Raleway);
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    margin: 10px;
+}
+
+.cont button:first-child:hover {
+    color: var(--dark-blue);
+    background: none;
+    border: 2px solid var(--dark-blue);
+}
+
+.cont button:last-child {
+    background-color: var(--lighr-green);
+}
+
+.cont button:last-child:hover {
+    color: var(--lighr-green);
+    background: none;
+    border: 2px solid var(--lighr-green);
+}
+
+
+/* HERO SECTION END */
+
+/* ABOUT SECTION START */
+.para h2 {
+    font-size: 36px;
+    font-family: var(--Raleway);
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.para h3 {
+    color: #555;
+    font-family: var(--Montserrat);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.list li {
+    padding-bottom: 10px;
+    color: rgb(68, 68, 68);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/*  ABOUT SECTION END */
+
+/* SERVICE SECTION START */
+.services h2 {
+    color: var(--dark-blue);
+    font-size: 35px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.services h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--lighr-green);
+    bottom: -15px;
+    left: 0;
+    border-radius: 2px;
+
+}
+
+.services p {
+    font-weight: 400;
+    font-size: 17px;
+    color: rgb(68, 68, 68);
+}
+
+/* SERVICE SECTION END */
+
+/* Media Querries */
+@media (min-width: 992px) {
+    .offcanvas {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero_section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 48px;
+    }
+
+    .cont {
+        flex-direction: column;
+    }
+
+    .cont button {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content h2 {
+        font-size: 32px;
+    }
+
+    .cont button {
+        width: 100%;
+    }
+}
+
+/* Adjust for medium screens and below */
+@media (max-width: 991.98px) {
+    .deskimage img {
+        width: 100%;
+        /* Make image responsive */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+
+    .para h2 {
+        font-size: 28px;
+        /* Reduce font size for better readability */
+        text-align: center;
+        /* Center align text */
+    }
+
+    .para h3 {
+        font-size: 16px;
+        /* Reduce font size */
+        text-align: center;
+    }
+
+    .list {
+        padding: 0;
+        margin: 0 auto;
+        width: 90%;
+        /* Center list */
+    }
+
+    .list li {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+/* Adjust for small screens */
+@media (max-width: 575.98px) {
+    .deskimage {
+        text-align: center;
+        /* Center align image */
+        margin-bottom: 20px;
+        /* Add spacing between sections */
+    }
+
+    .deskimage img {
+        width: 100%;
+        /* Full width on small screens */
+        height: auto;
+    }
+
+    .para h2 {
+        font-size: 24px;
+        /* Smaller font for very small screens */
+        line-height: 28px;
+    }
+
+    .para h3 {
+        font-size: 14px;
+        /* Further reduce font size */
+    }
+
+    .list li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

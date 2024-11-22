@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        .para h2 {
+            font-size: 36px;
+            font-family: var(--Raleway);
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+
+        .para h3 {
+            color: #555;
+            font-family: var(--Montserrat);
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .list li {
+            padding-bottom: 10px;
+            color: rgb(68, 68, 68);
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+
+        /* General Styles */
+        .para h2 {
+            font-size: 2vw;
+            /* Font size scales with viewport width */
+            font-family: var(--Raleway);
+            color: var(--dark-blue);
+            font-weight: 700;
+            text-align: center;
+            /* Center-align text for better layout on smaller screens */
+        }
+
+        .para h3 {
+            color: #555;
+            font-family: var(--Montserrat);
+            font-size: 1.5vw;
+            /* Font size scales dynamically */
+            font-style: italic;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .list li {
+            padding-bottom: 10px;
+            color: rgb(68, 68, 68);
+            font-size: 1.2vw;
+            /* Relative to viewport */
+            font-weight: 400;
+            line-height: 1.5em;
+            /* Flexible line height */
+        }
+
+        .deskimage img {
+            width: 100%;
+            /* Fully responsive image */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            /* Ensures content wraps automatically */
+            align-items: center;
+            /* Align items properly */
+        }
+
+        .col-lg-6 {
+            flex: 1 1 50%;
+            /* Each column takes 50% width */
+            padding: 10px;
+        }
+
+        .col-lg-6.para {
+            flex: 1 1 50%;
+            /* Ensures equal space for text and image */
+            text-align: center;
+            /* Center align content */
+        }
+
+        .container {
+            padding: 5%;
+            /* Add padding for better spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container-fluid mt-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Image Column -->
+                    <div class="col-lg-6 col-md-6 col-12 text-center">
+                        <img src="assests/imges/computer.jpg" class="img-fluid" alt="desk_image">
+                    </div>
+                    <!-- Text Column -->
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h2>Lorem ipsum dolor sit amet, <br> consectetur adipisicing</h2>
+                        <h3>"Excepteur sint occaecat cupidatat non proident, sunt in <br> culpa qui officia deserunt
+                            mollit
+                            anim id est laborum."</h3>
+                        <ul class="list mt-4">
+                            <li>
+                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
+                                " Ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
+                                "Duis aute irure dolor in reprehenderit in voluptate velit."
+                            </li>
+                            <li>
+                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
+                                " Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
+                                pariatur."
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
