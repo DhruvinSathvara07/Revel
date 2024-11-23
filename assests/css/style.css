@@ -34,7 +34,6 @@ ul li {
     font-family: var(--Raleway);
     font-size: 14px;
     font-weight: 700;
-    /* line-height: 21px; */
 }
 
 .home {
@@ -96,7 +95,7 @@ ul li {
 .hero_section {
     width: 100%;
     height: 450px;
-    background-image: url(../imges/1.jpg);
+    background-image: url(../imges/hero.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: var(--Montserrat);
@@ -216,107 +215,138 @@ ul li {
     color: rgb(68, 68, 68);
 }
 
+.box {
+    padding: 20px 40px;
+    margin-bottom: 40px;
+    box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
+    background: #fff;
+    transition: all 0.4s linear;
+}
+
+.box:hover {
+    box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
+    transform: translateY(-10px);
+}
+
+.image {
+    width: 100px !important;
+    color: #444;
+    font-size: 64px;
+    transition: 0.5s;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 34px;
+}
+
+.image img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #555;
+}
+
+.card-text {
+    font-size: 14px;
+    margin-bottom: 0;
+    line-height: 24px;
+}
+
 /* SERVICE SECTION END */
 
-/* Media Querries */
-@media (min-width: 992px) {
-    .offcanvas {
-        display: none !important;
-    }
+/* CLIENT SECTION START */
+
+/* =============================> SLIDER BAKI */
+
+/* CLIENT SECTION END */
+
+/* OUR PROTFOLIO SECTION START */
+.items {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-    .hero_section {
-        height: auto;
-        padding: 20px;
-    }
-
-    .content h2 {
-        font-size: 48px;
-    }
-
-    .cont {
-        flex-direction: column;
-    }
-
-    .cont button {
-        width: 80%;
-    }
+.item-1 {
+    width: 100%;
+    height: 279px;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 480px) {
-    .content h2 {
-        font-size: 32px;
-    }
-
-    .cont button {
-        width: 100%;
-    }
+.items::before {
+    content: attr(data-title);
+    /* Dynamically set text using data-title attribute */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
 }
 
-/* Adjust for medium screens and below */
-@media (max-width: 991.98px) {
-    .deskimage img {
-        width: 100%;
-        /* Make image responsive */
-        height: auto;
-        /* Maintain aspect ratio */
-    }
-
-    .para h2 {
-        font-size: 28px;
-        /* Reduce font size for better readability */
-        text-align: center;
-        /* Center align text */
-    }
-
-    .para h3 {
-        font-size: 16px;
-        /* Reduce font size */
-        text-align: center;
-    }
-
-    .list {
-        padding: 0;
-        margin: 0 auto;
-        width: 90%;
-        /* Center list */
-    }
-
-    .list li {
-        font-size: 16px;
-        line-height: 22px;
-    }
+.items:hover::before {
+    background: rgba(0, 0, 0, 0.7);
 }
 
-/* Adjust for small screens */
-@media (max-width: 575.98px) {
-    .deskimage {
-        text-align: center;
-        /* Center align image */
-        margin-bottom: 20px;
-        /* Add spacing between sections */
-    }
-
-    .deskimage img {
-        width: 100%;
-        /* Full width on small screens */
-        height: auto;
-    }
-
-    .para h2 {
-        font-size: 24px;
-        /* Smaller font for very small screens */
-        line-height: 28px;
-    }
-
-    .para h3 {
-        font-size: 14px;
-        /* Further reduce font size */
-    }
-
-    .list li {
-        font-size: 14px;
-        line-height: 20px;
-    }
+.items:hover {
+    transform: scale(1.2);
 }
+
+/* OUR PROTFOLIO SECTION END */
+
+/* Testimonials Section Start  */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#card {
+    box-sizing: content-box;
+    padding: 30px 30px 0 30px;
+    margin: 30px 15px;
+    text-align: center;
+    min-height: 350px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+    color: rgb(68, 68, 68);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* .swiper-blog p {
+} */
+
+/* Testimonials Section End  */

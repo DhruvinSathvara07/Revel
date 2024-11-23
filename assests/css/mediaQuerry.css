@@ -1,0 +1,89 @@
+/* Media Querries */
+@media (min-width: 992px) {
+    .offcanvas {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero_section {
+        height: auto;
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 48px;
+    }
+
+    .cont {
+        flex-direction: column;
+    }
+
+    .cont button {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content h2 {
+        font-size: 32px;
+    }
+
+    .cont button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .deskimage img {
+        width: 100%;
+        height: auto;
+    }
+
+    .para h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .para h3 {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .list {
+        padding: 0;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .list li {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .deskimage {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .deskimage img {
+        width: 100%;
+        height: auto;
+    }
+
+    .para h2 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .para h3 {
+        font-size: 14px;
+    }
+
+    .list li {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

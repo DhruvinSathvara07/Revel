@@ -1,3 +1,4 @@
+//OFF CANVAS
 document.addEventListener("DOMContentLoaded", () => {
     const toggler = document.querySelector(".navbar-toggler");
     const offcanvas = document.getElementById("offcanvasExample");
@@ -10,3 +11,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+

@@ -1,139 +1,248 @@
+Skip to content
+DEV Community
+Find related posts...
+Powered by Algolia
+Log in
+Create account
+
+0
+Jump to Comments
+
+1
+Save
+
+Cover image for Building An Image Slider With Swiper Js
+Tracy | Software Engineer
+Tracy | Software Engineer
+Posted on May 11, 2023
+
+
+11
+Building An Image Slider With Swiper Js
+#
+webdev
+#
+javascript
+#
+programming
+#
+tutorial
+Swiper JS is a popular open-source library for creating responsive and mobile-friendly touch sliders, and carousel
+components for websites and web applications.
+
+It provides a range of options for customizing the appearance and behavior of the slider, including navigation buttons,
+pagination, autoplay, and more. I will be going over the steps to use Swiper Js in building an image slider.
+
+The image slider will contain a navigation for users to navigate back and forth in order to view different images. It
+will also contain a clickable pagination so you can click to view a particular image.
+
+Step 1
+Google https://swiperjs.com/
+Click on demo
+You will be provided with samples of various Swiper demos when you click on "Demos".
+
+Scroll down and click on navigation-per-view; above it, click on element
+
+The element page contains the sample code files and a live view of the project. Copy the whole HTML code and paste it
+into your code editor.
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
     <style>
-        .para h2 {
-            font-size: 36px;
-            font-family: var(--Raleway);
-            color: var(--dark-blue);
-            font-weight: 700;
+        html,
+        body {
+            position: relative;
+            height: 100%;
         }
 
-        .para h3 {
-            color: #555;
-            font-family: var(--Montserrat);
-            font-size: 18px;
-            font-style: italic;
-            font-weight: 300;
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
         }
 
-        .list li {
-            padding-bottom: 10px;
-            color: rgb(68, 68, 68);
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 24px;
-        }
-
-        /* General Styles */
-        .para h2 {
-            font-size: 2vw;
-            /* Font size scales with viewport width */
-            font-family: var(--Raleway);
-            color: var(--dark-blue);
-            font-weight: 700;
-            text-align: center;
-            /* Center-align text for better layout on smaller screens */
-        }
-
-        .para h3 {
-            color: #555;
-            font-family: var(--Montserrat);
-            font-size: 1.5vw;
-            /* Font size scales dynamically */
-            font-style: italic;
-            font-weight: 300;
-            text-align: center;
-        }
-
-        .list li {
-            padding-bottom: 10px;
-            color: rgb(68, 68, 68);
-            font-size: 1.2vw;
-            /* Relative to viewport */
-            font-weight: 400;
-            line-height: 1.5em;
-            /* Flexible line height */
-        }
-
-        .deskimage img {
+        swiper-container {
             width: 100%;
-            /* Fully responsive image */
-            height: auto;
-            /* Maintain aspect ratio */
+            height: 100%;
         }
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            /* Ensures content wraps automatically */
-            align-items: center;
-            /* Align items properly */
-        }
-
-        .col-lg-6 {
-            flex: 1 1 50%;
-            /* Each column takes 50% width */
-            padding: 10px;
-        }
-
-        .col-lg-6.para {
-            flex: 1 1 50%;
-            /* Ensures equal space for text and image */
+        swiper-slide {
             text-align: center;
-            /* Center align content */
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .container {
-            padding: 5%;
-            /* Add padding for better spacing */
+        swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 
 <body>
-    <section>
-        <div class="container-fluid mt-5">
-            <div class="container">
-                <div class="row">
-                    <!-- Image Column -->
-                    <div class="col-lg-6 col-md-6 col-12 text-center">
-                        <img src="assests/imges/computer.jpg" class="img-fluid" alt="desk_image">
-                    </div>
-                    <!-- Text Column -->
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <h2>Lorem ipsum dolor sit amet, <br> consectetur adipisicing</h2>
-                        <h3>"Excepteur sint occaecat cupidatat non proident, sunt in <br> culpa qui officia deserunt
-                            mollit
-                            anim id est laborum."</h3>
-                        <ul class="list mt-4">
-                            <li>
-                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
-                                " Ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                            </li>
-                            <li>
-                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
-                                "Duis aute irure dolor in reprehenderit in voluptate velit."
-                            </li>
-                            <li>
-                                <i class="fa-regular fa-circle-check" style="color: #50d8af;"></i>
-                                " Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla
-                                pariatur."
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
+        slides-per-view="3">
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide>
+    </swiper-container>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+</body>
+
+</html>
+If you already have an HTML boilerplate, then you will need the Swiper link, HTML, and CSS code:
+Scroll down the element page
+Copy the link on the script tag and paste it into your HTML boilerplate below all HTML tags.
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+The Swiper link is necessary to make any logic you add functional. Without the link tag, the slider wouldn't work.
+
+The next step is to copy the HTML code and paste it into my code editor
+
+<swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30" slides-per-view="3">
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <swiper-slide>Slide 6</swiper-slide>
+    <swiper-slide>Slide 7</swiper-slide>
+    <swiper-slide>Slide 8</swiper-slide>
+    <swiper-slide>Slide 9</swiper-slide>
+</swiper-container>
+Then I will be replacing the slide 1 text with an image tag containing some images for each swiper-slide.
+
+<div class="slide-container">
+    <swiper-container class="mySwiper" pagination="true" navigation="true" loop="true" pagination-clickable="true"
+        space-between="30" slides-per-view="3">
+        <swiper-slide>
+            <img
+                src="https://thegadgetflow.com/wp-content/uploads/2020/04/10-gadgets-for-a-futuristic-home-office-1200x675.jpg">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img src="https://resources.owllabs.com/hubfs/uneebo-office-design-yNtCxu4kJXk-unsplash.jpg">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img
+                src="https://cdn.bisnow.net/resize?type=jpeg&url=https%3A%2F%2Fs3.amazonaws.com%2Fcdn.bisnow.net%2Fcontent%2Fimages%2F2019%2F03%2F5ca121a2f2118-20180520_venture_arch_opentable_0002_screenres-copy.jpeg&width=2160&sign=0OQSfq1SFkLDAMZhNvFNGDfDgR7LLrpgTkBcab8_tqc">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img
+                src="https://www.hpe.com/content/dam/hpe/insights/articles/2021/09/how-technology-is-enabling-the-new-hybrid-workspace/How-technology-is-enabling-the-new-hyrbid-workspace.jpg.transform/nxt-original/image.jpeg">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img src="https://cdna.artstation.com/p/assets/images/images/049/563/806/large/amy-colored.jpg?1652793049">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img src="https://cdn.oneesports.gg/cdn-data/2022/02/Anime_HimoutoUmaruChanR-1024x576.webp">
+        </swiper-slide>
+
+        <swiper-slide>
+            <img src="https://i.pinimg.com/550x/f5/a3/85/f5a385e2976b8d378a55cfa04396315a.jpg">
+        </swiper-slide>
+
+        <swiper-slide><img
+                src="https://www.cnet.com/a/img/resize/69256d2623afcbaa911f08edc45fb2d3f6a8e172/hub/2023/02/03/afedd3ee-671d-4189-bf39-4f312248fb27/gettyimages-1042132904.jpg?auto=webp&fit=crop&height=675&width=1200"></swiper-slide>
+
+        <swiper-slide><img
+                src="https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200"></swiper-slide>
+    </swiper-container>
+
+</div>
+
+<swiper-container class="mySwiper" pagination="true" navigation="true" loop="true" pagination-clickable="true"
+    space-between="30" slides-per-view="3"></swiper-container>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
+        slides-per-view="3">
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 4</swiper-slide>
+        <swiper-slide>Slide 5</swiper-slide>
+        <swiper-slide>Slide 6</swiper-slide>
+        <swiper-slide>Slide 7</swiper-slide>
+        <swiper-slide>Slide 8</swiper-slide>
+        <swiper-slide>Slide 9</swiper-slide>
+    </swiper-container>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 
 </body>
 
