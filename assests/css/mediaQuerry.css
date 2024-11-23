@@ -87,3 +87,18 @@
         line-height: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .text-container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* Target screens smaller than 768px */
+    .contact_container {
+        border-right: none;
+        /* Hide border for smaller screens */
+    }
+}
